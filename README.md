@@ -1,0 +1,2 @@
+# wedding
+Static Wedding Website
