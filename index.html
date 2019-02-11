@@ -1,9 +1,202 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Hello, World!</title>
-</head>
-<body>
-    <h1>Hello, World!</h1>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Alec and Lana's Wedding</title>
+
+    <style>
+      body {
+        color: #5a5a5a;
+      }
+
+      .divider {
+        margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+      }
+
+      .bg-image {
+        /* The image used */
+        background-image: url("/static/engagement.jpg");
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        width: 100%;
+        height: 0;
+        padding-top: 66.64%; /* (img-height / img-width * container-width) */
+                             /* (853 / 1280 * 100) */
+      }
+
+      .img-responsive {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Alec and Lana's Wedding</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#rsvp">RSVP</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#ceremony">Event</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#hotels">Where to Stay</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#other">Everything Else</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+      <div class="bg-image"></div>
+
+      <div class="container" style="margin-top: 20px; max-width: 650px;">
+        <div id="rsvp" class="row">
+          <div style="width: 100%">
+            <h1 class="text-center" style="width: 100%">RSVP</h1>
+          </div>
+          <div class="container text-center">
+            <p>Let us know you're coming!</p>
+            <div class="container">
+              <a href="mailto:wedding@rosenbaum.io?subject=Lana%20and%20Alec's%20Wedding%20RSVP&body=Hi%20Alec%20and%20Lana!%0d%0d[%20]%20I%20won't%20be%20able%20to%20attend%20:(%0d[%20]%20I%20would%20love%20to%20attend!%0d%0dAnything%20else%20we%20should%20know%20about?%20Allergies,%20etc?%0d%0d%0dBest,%0d________" rel="EMAIL" class="btn btn-primary btn-md" role="button" aria-disabled="true">Click to RSVP</a>
+            </div>
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <div id="ceremony" class="row">
+          <div style="width: 100%">
+            <h1 class="text-center" style="width: 100%">Ceremony and Reception</h1>
+          </div>
+          <div>
+            <dl class="dl-horizontal lead">
+              <dt>What</dt>
+              <dd>Celebrate our marriage in the lovely gardens of Howard County Conservancy</dd>
+              <dt>When</dt>
+              <dd>Saturday, June 22, at 4:00 pm</dd>
+              <dt>Where</dt>
+              <dd>
+                  <address>
+                      Howard County Conservancy<br>
+                      <a href="https://goo.gl/maps/fF7e2eGL8w92">
+                      10520 Old Frederick Rd,
+                      Woodstock,
+                      MD 21163</a><br>
+                      Phone: (410) 465-8877
+                  </address>
+              </dd>
+              <dt>Attire</dt>
+              <dd>Cocktail. Be warned: Although much of the reception will be indoors, the gardens and ceremony area require walking on a small gravel path. This may be tricky in heels.
+              </dd>
+              <dt>Parking</dt>
+              <dd>Parking is available on-site at the Conservancy</dd>
+            </dl>
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <div id="hotels" class="row">
+          <div style="width: 100%">
+            <h1 class="text-center" style="width: 100%">Where to Stay</h1>
+          </div>
+          <div>
+            <p>
+              We have a block of <strong>15</strong> rooms available at the <a href="TODO"><strong>Holiday Inn Express Columbia East</strong></a>. The block is guaranteed until <strong>May 22, 2019</strong>, but we expect rooms to go pretty quickly. Transportation to and from the conservancy will be provided for guests staying here.
+            </p>
+            <p>
+              Unfortunately there's some sort of event going on nearby, so we couldn't get a bigger block. There's plenty of hotels nearby, though, so accommodations shouldn't be a problem if you don't mind being a little spread out. Here's where we'd recommend looking:
+            </p>
+            <table class="table table-striped">
+              <tbody class="container">
+                <tr class="row">
+                  <th class="col-md-2">Turf Valley Resort</th>
+                  <td class="col-md-10">
+                    The <a href="https://www.turfvalley.com/stay">Turf Valley Resort</a> is conveniently located just off the highway and very close to the wedding venue.
+                    It is about a 5-10 minute drive to Howard County Conservancy <a href="#TODO">(directions)</a>.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <div id="other" class="row">
+          <div style="width: 100%">
+            <h1 class="text-center" style="width: 100%">Registry</h1>
+          </div>
+          <div>
+            <p>
+              We have a registry listed online <a href="TODO"><strong>here!</strong></a>
+            </p>
+            <p>
+              If instead, you'd like to contribute to our rainy-day fund, that would also be fantastic!
+            </p>
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <div id="other" class="row">
+          <div style="width: 100%">
+            <h1 class="text-center" style="width: 100%">Save the Dates</h1>
+          </div>
+          <div>
+            <p>
+              There are two versions of our Save the Dates! Both are displayed below :)
+            </p>
+            <div class="container-fluid">
+            <div class="row no-gutter">
+              <div class="col-lg-6">
+                <img src="/static/WeddingSaveTheDateV1.png" class="img-responsive center-block">
+              </div>
+              <div class="col-lg-6">
+                <img src="/static/WeddingSaveTheDateV2.png" class="img-responsive center-block">
+              </div>
+            </div>
+        </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+      </footer>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
 </html>
