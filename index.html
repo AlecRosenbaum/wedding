@@ -81,8 +81,17 @@
           <div class="container text-center">
             <p>Let us know you're coming! Please RSVP by May 15th, 2019</p>
             <div class="container">
-              <a href="mailto:wedding@rosenbaum.io?subject=Lana%20and%20Alec's%20Wedding%20RSVP&body=Hi%20Alec%20and%20Lana!%0d%0d[%20]%20I%20won't%20be%20able%20to%20attend%20:(%0d[%20]%20I%20would%20love%20to%20attend!%0d%0dAnything%20else%20we%20should%20know%20about?%20Allergies,%20etc?%0d%0d%0dBest,%0d________" rel="EMAIL" class="btn btn-primary btn-md" role="button" aria-disabled="true">Click to RSVP</a>
+              <div
+                class="btn btn-primary btn-md"
+                role="button"
+                onclick="$.post('https://8h14xk9vo3.execute-api.us-east-1.amazonaws.com/prod', ['test name', 'yes']);"
+              >
+                Click to RSVP
+              </div>
             </div>
+            <!-- <div class="container">
+              <a href="mailto:wedding@rosenbaum.io?subject=Lana%20and%20Alec's%20Wedding%20RSVP&body=Hi%20Alec%20and%20Lana!%0d%0d[%20]%20I%20won't%20be%20able%20to%20attend%20:(%0d[%20]%20I%20would%20love%20to%20attend!%0d%0dAnything%20else%20we%20should%20know%20about?%20Allergies,%20etc?%0d%0d%0dBest,%0d________" rel="EMAIL" class="btn btn-primary btn-md" role="button" aria-disabled="true">Click to RSVP</a>
+            </div> -->
           </div>
         </div>
 
@@ -196,7 +205,11 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   </body>
