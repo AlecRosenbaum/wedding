@@ -84,9 +84,18 @@
               <div
                 class="btn btn-primary btn-md"
                 role="button"
-                onclick="$.post('https://8h14xk9vo3.execute-api.us-east-1.amazonaws.com/prod', JSON.stringify(['test name', 'yes']));"
+                onclick="beginRSVP();"
               >
                 Click to RSVP
+              </div>
+            </div>
+            <div id="rsvp-form" style="margin-top: 15px; display: none;">
+              <div id="rsvp_entries"></div>
+              <div style="width: 100%;">
+                <div style="display: inline-block;" class="float-right">                
+                  <button onclick="addEntry();" class="btn btn-secondary">+</button>
+                  <button onclick="submitRSVP()" class="btn btn-primary">Submit</button>
+                </div>
               </div>
             </div>
             <!-- <div class="container">
@@ -212,5 +221,46 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var rsvpCount = 0;
+
+      // happens when someone clicks "RSVP"
+      const beginRSVP = () => {
+        if ($('#rsvp-form').is(":hidden")) {
+          // add the first entry
+          addEntry();
+
+          // show the form
+          $('#rsvp-form').show();  
+        }      
+      }
+
+      // happens when an entry is added
+      const addEntry = () => {
+        const template = `
+          <div class="input-group mb-3 rsvp-entry">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <input id="rsvp_name_${rsvpCount}" onclick="$('#not_${rsvpCount}').toggle(!this.checked)" type="checkbox" checked>
+                <label for="rsvp_name_${rsvpCount}" class="form-check-label" style="margin-left: 5px;"><span id="not_${rsvpCount}" style="display: none;">Not</span> Attending</label>
+              </div>
+            </div>
+            <input type="text" class="form-control" placeholder="name...">
+          </div>
+        `;
+        rsvpCount += 1;
+
+        $("#rsvp_entries").append(template);
+      }
+
+      const submitRSVP = () => {
+        $(".rsvp-entry").toArray().map((val) => {
+          const name = $(val).find("input[type=text]").val();
+          const attending = $(val).find("input[type=checkbox]").prop("checked");
+          $.post('https://8h14xk9vo3.execute-api.us-east-1.amazonaws.com/prod', JSON.stringify([name, attending ? "yes" : "no"]));
+        }, []); 
+      }
+
+    </script>
   </body>
 </html>
