@@ -1,3 +1,5 @@
+import json
+
 from google.oauth2 import service_account
 from googleapiclient import discovery
 
@@ -7,7 +9,7 @@ SERVICE_ACCOUNT_FILE = './credentials.json'
 SPREADSHEET_ID = "1xuScrH253ULpsq-RKLGCqbDQagieUNMQsjtGJ1uQbVw"
 
 
-def lambda_handler():
+def lambda_handler(event, context):
     credentials = service_account.Credentials.from_service_account_file(
         SERVICE_ACCOUNT_FILE, scopes=SCOPES
     )
@@ -16,7 +18,7 @@ def lambda_handler():
     value_input_option = 'USER_ENTERED'
     value_range_body = {
         "values": [
-            ["asdf", "fdsa"],
+            json.loads(event["body"]),
         ]
     }
     request = service.spreadsheets().values().append(
@@ -25,7 +27,10 @@ def lambda_handler():
         valueInputOption=value_input_option,
         body=value_range_body,
     )
-    return request.execute()
+    return {
+        "statusCode": 201,
+        "body": json.dumps(request.execute()),
+    }
 
 
 if __name__ == '__main__':
